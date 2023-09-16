@@ -1,3 +1,41 @@
+* Using *UseState* hook.
+```js
+import React, { useState } from 'react'; //importing useState react hook
+import { StyleSheet, Text, View, Button } from 'react-native';
+
+export default function App() {
+
+  //adding state
+  const [denName, clickKaramaNama] = useState('Rumindu');//name is assigning value "Rumindu"
+
+  const clickKaranna = () => {
+    clickKaramaNama('Kavishka'); //updating name 
+  };
+  return (
+    <View style={styles.container}>
+      {/*Displaying name */}
+      <Text>My name is {denName}</Text>
+      <View>
+        {/*onPress calling 'clickKaranna' function */}
+        <Button title='Click Karanna' onPress={clickKaranna} />
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent:'center',
+  },
+});
+```
+<hr>
+* There can be multiple state
+* Passing object 
+```js
 import React, { useState } from 'react'; //importing useState react hook
 import { StyleSheet, Text, View, Button } from 'react-native';
 
@@ -34,3 +72,5 @@ const styles = StyleSheet.create({
     justifyContent:'center',
   },
 });
+
+```

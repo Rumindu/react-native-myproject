@@ -1,27 +1,35 @@
-import React, { useState } from 'react'; //importing useState react hook
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function App() {
+  const [name, setName] = useState('shaun');
+  const [age, setAge] = useState('30');
 
-  //adding state
-  const [denName, clickKaramaNama] = useState('Rumindu');//name is assigning value "Rumindu"
+  //external function
+  const typing = (value) => {
+    setName(value);
+  }
 
-  //pass object intend of string
-  const [person, setPerson] = useState({ name: 'mario', age: 40 });
-
-  const clickKaranna = () => {
-    clickKaramaNama('Kavishka'); //updating name usin
-    setPerson({ name: 'Kavindu', age: 50 });
-  };
   return (
     <View style={styles.container}>
-      {/*Displaying */}
-      <Text>My name is {denName}</Text>
-      <Text>His name is {person.name} and his age is {person.age}</Text>
-      <View>
-        {/*onPress calling 'clickKaranna' function */}
-        <Button title='Click Karanna' onPress={clickKaranna} />
-      </View>
+
+      <Text>Enter name:</Text>
+      <TextInput
+        multiline
+        placeholder='e.g. John Doe' 
+        style={styles.input}
+        //Adding Event Listner with external function
+        onChangeText={typing} />
+
+      <Text>Enter age:</Text>
+      <TextInput 
+        placeholder='e.g. 99' 
+        keyboardType='numeric'
+        style={styles.input}
+        //Adding Event Listner with anonymous function
+        onChangeText={(value) => setAge(value)} />
+
+      <Text style={styles.result}>name: {name}, age: {age}</Text>
     </View>
   );
 }
@@ -31,6 +39,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent:'center',
+    justifyContent: 'center',
   },
+  input: {
+    borderWidth: 1,
+    borderColor: '#777',
+    padding: 8,
+    margin: 10,
+    width: 200,
+  }
 });

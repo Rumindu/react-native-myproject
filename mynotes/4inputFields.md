@@ -107,4 +107,7 @@ export default function App() {
 **props athara , demmoth weradi**
 
 <img src='./images/Screenshot 2023-09-17 192537.png\'>
+<br>
+* More about TextInput props
 
+https://reactnative.dev/docs/textinput

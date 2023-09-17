@@ -105,5 +105,6 @@ export default function App() {
         onChangeText={(value) => setAge(value)} />
 ```
 **props athara , demmoth weradi**
+
 <img src='./images/Screenshot 2023-09-17 192537.png\'>
 

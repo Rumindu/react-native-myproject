@@ -1,4 +1,5 @@
-* Using *UseState* hook.
+* <h2>Using 'UseState' hook.</h2>
+* adding "OnPress" prop in to "button component"
 ```js
 import React, { useState } from 'react'; //importing useState react hook
 import { StyleSheet, Text, View, Button } from 'react-native';
@@ -33,6 +34,7 @@ const styles = StyleSheet.create({
 });
 ```
 <hr>
+
 * There can be multiple state
 * Passing object 
 ```js
@@ -44,11 +46,12 @@ export default function App() {
   //adding state
   const [denName, clickKaramaNama] = useState('Rumindu');//name is assigning value "Rumindu"
 
-  //pass object intend of string
+  //adding state
+  //passing object intend of string
   const [person, setPerson] = useState({ name: 'mario', age: 40 });
 
   const clickKaranna = () => {
-    clickKaramaNama('Kavishka'); //updating name usin
+    clickKaramaNama('Kavishka'); //updating name
     setPerson({ name: 'Kavindu', age: 50 });
   };
   return (

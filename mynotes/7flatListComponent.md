@@ -1,6 +1,14 @@
-* **Flat List** - Like <ScrollView> creating scroll view but it is more optimize
-1. **Display List item using <FlatList>**
-* There is considerable difference between normal list. Here we aren't using array **map** function. We are passing several types of props into <FlatList> component. 
+* **Flat List** - Like `<ScrollView>` but Flat List is more optimize than ScrollView>
+1. **Display List item using `<FlatList>`**
+* There is considerable difference between `<ScrollView>` and `<Flat List>`. In `<Flat List>` we aren't using array **map** function. We are passing several types of props into <FlatList> component.
+
+**<FlatList
+        {/* passing props */}
+        data={people} 
+        renderItem={({ item }) => ( 
+          <Text style={styles.item}>{item.name}</Text>
+        )}
+      />** 
 ```js
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
@@ -54,6 +62,8 @@ const styles = StyleSheet.create({
 * flat list look at 'key' property. Each item must have 'key property'
 
 2. **When list has 'id' property intend of 'key' property**
+
+**keyExtractor={(item) => item.id}**
 ```js
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';

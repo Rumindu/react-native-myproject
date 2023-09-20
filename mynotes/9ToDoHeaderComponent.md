@@ -1,3 +1,7 @@
+**`import Header from './components/header';`**
+**`<Header />`**
+* App.js file
+```js
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import Header from './components/header';
@@ -41,3 +45,33 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
 });
+
+```
+<br>
+* header.js
+```js
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+
+export default function Header() {
+  return (
+    <View style={styles.header}>
+      <Text style={styles.title}>My Todos</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  header: {
+    height: 80,
+    paddingTop: 38,
+    backgroundColor: 'coral',
+  },
+  title: {
+    textAlign: 'center',
+    color: '#fff',
+    fontSize: 20,
+    fontWeight: 'bold',
+  }
+});
+```
